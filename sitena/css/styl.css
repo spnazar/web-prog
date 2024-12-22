@@ -1,29 +1,66 @@
+/* Filters Section */
 .filters {
     background-color: #595959;
-    padding: 20px;
+    padding: 15px;
     margin: 30px 0;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .filter-button {
     background-color: transparent;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border: 1px solid #000000;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
+    font-weight: 300; /* Тонкий текст */
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Устанавливаем цвет текста */
+    z-index: 1;
 }
+
+.filter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.7); /* Прозрачный фон */
+    z-index: 0;
+    transition: left 0.3s ease;
+}
+
+.filter-button:hover::before {
+    left: 0;
+}
+
 .filter-button:hover {
-    background-color: #333;
-    color: #ffffff;
+    color: #fff;
     border-color: #555;
 }
+
 .filter-button.active {
     background-color: #555;
     color: #fff;
     border-color: #555;
+}
+
+.filter-button.active::before {
+    left: 0;
 }

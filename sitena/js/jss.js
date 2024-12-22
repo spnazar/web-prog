@@ -6,19 +6,154 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalPrice = document.getElementById("modal-price");
     const modalDescription = document.getElementById("modal-description");
     const closeModal = document.querySelector(".close");
+    const carouselContainer = document.getElementById("carousel");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
 
     // Пример товаров с категориями
     const items = [
-        { name: "Длинная стеганая куртка", price: "45 990 ₸", image: "../img-video/11.jpeg", description: "Классическая куртка.", category: "outerwear" },
-        { name: "Кожаная куртка", price: "39 990 ₸", image: "../img-video/11.jpeg", description: "Элегантная кожаная куртка.", category: "outerwear" },
-        { name: "Свитер вязаный", price: "19 990 ₸", image: "../img-video/11.jpeg", description: "Теплый свитер.", category: "sweaters" },
-        { name: "Худи с капюшоном", price: "25 990 ₸", image: "../img-video/11.jpeg", description: "Удобное худи.", category: "hoodies" },
-        { name: "Рубашка в клетку", price: "15 990 ₸", image: "../img-video/11.jpeg", description: "Классическая рубашка.", category: "shirts" },
-        { name: "Футболка базовая", price: "8 990 ₸", image: "../img-video/11.jpeg", description: "Повседневная футболка.", category: "tshirts" },
-        { name: "Джинсы классические", price: "29 990 ₸", image: "../img-video/11.jpeg", description: "Удобные джинсы.", category: "bottoms" },
-        { name: "Шапка шерстяная", price: "5 990 ₸", image: "../img-video/11.jpeg", description: "Теплая шапка.", category: "accessories" },
-        { name: "Кроссовки спортивные", price: "39 990 ₸", image: "../img-video/11.jpeg", description: "Спортивные кроссовки.", category: "shoes" }
+
+        { name: "Длинная стеганая куртка", 
+            price: "45 990 ₸", 
+            image: "../img-video/11.jpeg",
+            description: "Классическая куртка.", 
+            category: "outerwear" 
+        },
+        { name: "Кожаная куртка", 
+            price: "39 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Элегантная кожаная куртка.", 
+            category: "outerwear"
+        },
+        { name: "Кожаная куртка", 
+            price: "39 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Элегантная кожаная куртка.", 
+            category: "outerwear"
+        },
+        { name: "Кожаная куртка", 
+            price: "39 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Элегантная кожаная куртка.", 
+            category: "outerwear"
+        },
+
+        { name: "Свитер вязаный", 
+            price: "19 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Теплый свитер.", 
+            category: "sweaters" },
+            { name: "Свитер вязаный", 
+                price: "19 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Теплый свитер.", 
+                category: "sweaters" },
+                { name: "Свитер вязаный", 
+                    price: "19 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Теплый свитер.", 
+                    category: "sweaters" },
+
+        { name: "Худи с капюшоном", 
+            price: "25 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Удобное худи.", 
+            category: "hoodies" },
+            { name: "Худи с капюшоном", 
+                price: "25 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Удобное худи.", 
+                category: "hoodies" },
+                { name: "Худи с капюшоном", 
+                    price: "25 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Удобное худи.", 
+                    category: "hoodies" },
+
+        { name: "Рубашка в клетку", 
+            price: "15 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Классическая рубашка.", 
+            category: "shirts" },
+            { name: "Рубашка в клетку", 
+                price: "15 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Классическая рубашка.", 
+                category: "shirts" },
+                { name: "Рубашка в клетку", 
+                    price: "15 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Классическая рубашка.", 
+                    category: "shirts" },
+
+        { name: "Футболка базовая", 
+            price: "8 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Повседневная футболка.", 
+            category: "tshirts" },
+            { name: "Футболка базовая", 
+                price: "8 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Повседневная футболка.", 
+                category: "tshirts" },
+                { name: "Футболка базовая", 
+                    price: "8 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Повседневная футболка.", 
+                    category: "tshirts" },
+
+
+        { name: "Джинсы классические", 
+            price: "29 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Удобные джинсы.", 
+            category: "bottoms" },
+            { name: "Джинсы классические", 
+                price: "29 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Удобные джинсы.", 
+                category: "bottoms" },
+                { name: "Джинсы классические", 
+                    price: "29 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Удобные джинсы.", 
+                    category: "bottoms" },
+
+
+        { name: "Шапка шерстяная", 
+            price: "5 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Теплая шапка.", 
+            category: "accessories" },
+            { name: "Шапка шерстяная", 
+                price: "5 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Теплая шапка.", 
+                category: "accessories" },
+                { name: "Шапка шерстяная", 
+                    price: "5 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Теплая шапка.", 
+                    category: "accessories" },
+
+        { name: "Кроссовки спортивные", 
+            price: "39 990 ₸", 
+            image: "../img-video/11.jpeg", 
+            description: "Спортивные кроссовки.", 
+            category: "shoes" },
+            { name: "Кроссовки спортивные", 
+                price: "39 990 ₸", 
+                image: "../img-video/11.jpeg", 
+                description: "Спортивные кроссовки.", 
+                category: "shoes" },
+                { name: "Кроссовки спортивные", 
+                    price: "39 990 ₸", 
+                    image: "../img-video/11.jpeg", 
+                    description: "Спортивные кроссовки.", 
+                    category: "shoes" }
     ];
+
+
 
     // Генерация карточек товаров
     function renderItems(filteredItems) {

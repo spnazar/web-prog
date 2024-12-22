@@ -46,6 +46,95 @@ header .user-actions a.emoji {
     color: #000000;
 }
 
+.user-actions .emoji {
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999; /* Обеспечиваем, чтобы модальное окно было сверху */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный темный фон */
+    overflow: auto; /* Прокрутка, если содержимое окна большое */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Плавный эффект появления */
+}
+
+/* Стиль для кнопки закрытия */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #f00; /* Изменение цвета при наведении */
+}
+
+/* Заголовок модального окна */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Главный баннер */
 /* Слайдер */
 .banner {
@@ -77,6 +166,14 @@ header .user-actions a.emoji {
 .slide video {
     pointer-events: none; /* Отключает управление видео пользователем */
 }
+
+
+
+
+
+
+
+
 
 /* Коллекция товаров */
 .collection {
@@ -140,8 +237,6 @@ header .user-actions a.emoji {
     color: #555;
     margin-bottom: 15px;
 }
-
-
 
 
 
@@ -266,7 +361,48 @@ header .user-actions a.emoji {
 
 .close:hover {
     color: #333;
+} 
+
+/* Стили для кнопки "Добавить в корзину" */
+#add-to-cart {
+    background-color: #555555;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
+
+#add-to-cart:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#add-to-cart:hover:enabled {
+    background-color: #3e3e3e;
+}
+
+
+.size-options button.selected {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Дополнительный текст */
 .additional-info {
@@ -336,6 +472,16 @@ header .user-actions a.emoji {
     transform: scale(1.05);
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

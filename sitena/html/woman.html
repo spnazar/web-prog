@@ -11,7 +11,7 @@
 <body>
 
 
-
+    <!-- Фильтры -->
     <section class="filters">
         <div class="filter-group">
             <button data-filter="all" class="filter-button active">Просмотреть все</button>
@@ -26,41 +26,36 @@
         </div>
     </section>
 
-
-
-     <!-- Коллекция -->
-     <section class="collection" id="collection">
+    <!-- Коллекция -->
+    <section class="collection" id="collection">
         <!-- Сюда будут добавляться карточки с товарами -->
     </section>
 
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-container">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Товар">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-name">Название товара</h2>
+                    <p id="modal-price" class="price">Цена</p>
+                    <p id="modal-description">Описание товара</p>
 
-
-     <!-- Модальное окно -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-container">
-            <div class="modal-image">
-                <img id="modal-img" src="" alt="Товар">
-            </div>
-            <div class="modal-info">
-                <h2 id="modal-name">Название товара</h2>
-                <p id="modal-price" class="price">Цена</p>
-                <p id="modal-description">Описание товара</p>
-                <div class="size-options">
-                    <h3>Размеры:</h3>
-                    <button>S</button>
-                    <button>M</button>
-                    <button>L</button>
-                    <button>XL</button>
-                    <button>XXL</button>
+                    <div class="size-options">
+                        <h3>Размеры:</h3>
+                        <button>S</button>
+                        <button>M</button>
+                        <button>L</button>
+                        <button>XL</button>
+                        <button>XXL</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
 
     <script src="../js/jss.js"></script>
 </body>

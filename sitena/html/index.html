@@ -20,9 +20,27 @@
             </ul>
         </nav>
 
+        <!-- Кнопка корзины -->
         <div class="user-actions">
-            <a href="#" class="emoji">🛒</a>
+            <a href="#" class="emoji" id="cart-btn">🛒 <span id="cart-count">0</span></a>
         </div>
+
+        <!-- Корзина -->
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2>Ваша корзина</h2>
+                <ul id="cart-items">
+                    <!-- Здесь будут отображаться товары корзины -->
+                </ul>
+                <div class="cart-footer">
+                    <p id="total-price">Общая стоимость: 0 ₽</p>
+                    <button id="checkout-btn">Перейти к оплате</button>
+                </div>
+            </div>
+        </div>
+
+
     </header>
 
     <!-- Слайдер с изображениями и видео -->
@@ -49,30 +67,32 @@
         <!-- Сюда будут добавляться карточки с товарами -->
     </section>
 
-     <!-- Модальное окно -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-container">
-            <div class="modal-image">
-                <img id="modal-img" src="" alt="Товар">
-            </div>
-            <div class="modal-info">
-                <h2 id="modal-name">Название товара</h2>
-                <p id="modal-price" class="price">Цена</p>
-                <p id="modal-description">Описание товара</p>
-                <div class="size-options">
-                    <h3>Размеры:</h3>
-                    <button>S</button>
-                    <button>M</button>
-                    <button>L</button>
-                    <button>XL</button>
-                    <button>XXL</button>
+    <!-- Модальное окно для товара -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-container">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Товар">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-name">Название товара</h2>
+                    <p id="modal-price" class="price">Цена</p>
+                    <p id="modal-description">Описание товара</p>
+                    <div class="size-options">
+                        <h3>Размеры:</h3>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                        <button class="size-btn" data-size="XXL">XXL</button>
+                    </div>
+                    <button id="add-to-cart" disabled>Добавить в корзину</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
 
     <!-- Кнопка "Посмотреть ещё" -->
     <div class="buttons-container">
